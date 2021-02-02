@@ -137,14 +137,14 @@
 		"adminViewSuffix": ""
 	},
 	{
-		"id": "diet",
+		"id": "dietary_restrictions",
 		"name": "Dietary restrictions",
 		"showAsTitleInstead": false,
 		"inputType": "checkboxSet",
 		"regexType": "nocheck",
 		"minLength": 0,
 		"maxLength": 0,
-		"options": "Diabetic|High blood sugar|High chloresterol|Can be fed after midnight",
+		"options": "Diabetic|High blood sugar|High chloresterol|Can't be fed after midnight",
 		"initialValue": "",
 		"description": "",
 		"userViewRequired": false,

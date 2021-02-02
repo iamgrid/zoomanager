@@ -1,0 +1,123 @@
+[
+	{
+		"id": "f2ed8ebb-1934-434e-b700-849bbac48edc",
+		"name": "Suzy",
+		"species": "Panthera leo",
+		"date-of-birth": "2001-01-03",
+		"gender": "Female",
+		"location": "With us",
+		"enclosure": "Savanna",
+		"dietary_restrictions": "",
+		"notes": "Lorem ipsum denem sit amet"
+	},
+	{
+		"id": "6e671edd-d261-4019-ac77-e7e704f60150",
+		"name": "Babette",
+		"species": "Panthera leo",
+		"date-of-birth": "2001-01-03",
+		"gender": "Female",
+		"location": "With us",
+		"enclosure": "Savanna",
+		"dietary_restrictions": "High chloresterol",
+		"notes": "Accentuer elit"
+	},
+	{
+		"id": "0b28f578-c079-418f-8663-ad77e25ca01a",
+		"name": "Bob",
+		"species": "Panthera pardus",
+		"date-of-birth": "2012-03-21",
+		"gender": "Male",
+		"location": "With us",
+		"enclosure": "Savanna",
+		"dietary_restrictions": "Can't be fed after midnight",
+		"notes": ""
+	},
+	{
+		"id": "7c7f0ae7-24c5-4b2c-9701-363304a8f64f",
+		"name": "Laura",
+		"species": "Panthera tigris",
+		"date-of-birth": "2014-09-14",
+		"gender": "Female",
+		"location": "With us",
+		"enclosure": "Savanna",
+		"dietary_restrictions": "",
+		"notes": "Momma of Ashley and Katie"
+	},
+	{
+		"id": "7c7f0ae7-24c5-4b2c-9701-363304a8f64f",
+		"name": "Ashley",
+		"species": "Panthera tigris",
+		"date-of-birth": "2020-06-11",
+		"gender": "Female",
+		"location": "With us",
+		"enclosure": "Savanna",
+		"dietary_restrictions": "",
+		"notes": "Cub of Laura"
+	},
+	{
+		"id": "7c7f0ae7-24c5-4b2c-9701-363304a8f64f",
+		"name": "Katie",
+		"species": "Panthera tigris",
+		"date-of-birth": "2020-06-12",
+		"gender": "Female",
+		"location": "With us",
+		"enclosure": "Savanna",
+		"dietary_restrictions": "",
+		"notes": "Cub of Laura"
+	},
+	{
+		"id": "61f304e8-5d55-4b8b-b6f5-0e48ae9832db",
+		"name": "Simba",
+		"species": "Pan troglodytes",
+		"date-of-birth": "2012-04-12",
+		"gender": "Male",
+		"location": "With us",
+		"enclosure": "Savanna",
+		"dietary_restrictions": "",
+		"notes": ""
+	},
+	{
+		"id": "427b4ec9-2693-41df-aba0-eeb0eda828eb",
+		"name": "Kiki",
+		"species": "Pan troglodytes",
+		"date-of-birth": "2014-09-19",
+		"gender": "Female",
+		"location": "On loan",
+		"enclosure": "In transit",
+		"dietary_restrictions": "",
+		"notes": "Sister of Raffles"
+	},
+	{
+		"id": "5527f6cb-2761-4677-ae3b-d0bdadb83b21",
+		"name": "Raffles",
+		"species": "Pan troglodytes",
+		"date-of-birth": "2014-09-19",
+		"gender": "Male",
+		"location": "With us",
+		"enclosure": "Savanna",
+		"dietary_restrictions": "",
+		"notes": "Brother of Kiki"
+	},
+	{
+		"id": "b57e36db-10ed-4662-88ea-df89731400a1",
+		"name": "Congo",
+		"species": "Loxodonta cyclotis",
+		"date-of-birth": "1995-10-01",
+		"gender": "Male",
+		"location": "With us",
+		"enclosure": "Savanna",
+		"dietary_restrictions": "Diabetic",
+		"notes": "Brother of Charlie"
+	},
+	{
+		"id": "4257232c-7f33-4954-8277-c81285bfc2e3",
+		"name": "Charlie",
+		"species": "Loxodonta cyclotis",
+		"date-of-birth": "1992-11-12",
+		"gender": "Male",
+		"location": "With us",
+		"enclosure": "Savanna",
+		"dietary_restrictions": "High blood sugar",
+		"notes": "Brother of Congo"
+	}
+]
