@@ -1,0 +1,88 @@
+{
+	"Chordata": {
+		"Mammalia": {
+			"Carnivora": {
+				"Feliformia": {
+					"Felidae": {
+						"Pantherinae": {
+							"Panthera": {
+								"Panthera leo": {
+									"commonName": "Lion",
+									"diet": "meat"
+								},
+								"Panthera pardus": {
+									"commonName": "Leopard",
+									"diet": "meat"
+								},
+								"Panthera tigris": {
+									"commonName": "Tiger",
+									"diet": "meat"
+								}
+							}
+						}
+					}
+				}
+			},
+			"Perissodactyla": {
+				"Equidae": {
+					"Equus": {
+						"Hippotigris": {
+							"commonName": "Zebra",
+							"diet": "grasses"
+						}
+					}
+				}
+			},
+			"Primates": {
+				"Haplorhini": {
+					"Simiiformes": {
+						"Hominidae": {
+							"Homininae": {
+								"Hominini": {
+									"Pan": {
+										"Pan troglodytes": {
+											"commonName": "Chimpanzee",
+											"diet": "fruit, leaves and leaf buds, seeds, blossoms, stems, pith, bark, resin"
+										},
+										"Pan pansicus": {
+											"commonName": "Bonobo",
+											"diet": "fruit, leaves, honey, eggs, meat from small vertebrates"
+										}
+									}
+								},
+								"Gorillini": {
+									"Gorilla": {
+										"Gorilla gorilla": {
+											"commonName": "Western gorilla",
+											"diet": "leaves, stems, fruit, piths, flowers, bark, invertebrates, soil"
+										},
+										"Gorilla beringei": {
+											"commonName": "Eastern gorilla",
+											"diet": "foliage, fruit"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"Proboscidea": {
+				"Elephantidae": {
+					"Elephantinae": {
+						"Loxodonta": {
+							"Loxodonta africana": {
+								"commonName": "African bush elephant",
+								"diet": "leaves, fruit"
+							},
+							"Loxodonta cyclotis": {
+								"commonName": "African forest elephant",
+								"diet": "bark, leaves, fruit"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
