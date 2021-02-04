@@ -14,17 +14,17 @@ export default function Counter() {
 	const [incrementAmount, setIncrementAmount] = useState('2');
 
 	return (
-		<div aria-label="Counter container">
+		<div aria-label='Counter container'>
 			<div>
 				<button
-					aria-label="Increment value"
+					aria-label='Increment value'
 					onClick={() => dispatch(increment())}
 				>
 					+
 				</button>
-				<span aria-label="Current counter value">{count}</span>
+				<span aria-label='Current counter value'>{count}</span>
 				<button
-					aria-label="Decrement value"
+					aria-label='Decrement value'
 					onClick={() => dispatch(decrement())}
 				>
 					-
@@ -32,9 +32,9 @@ export default function Counter() {
 			</div>
 			<div>
 				<input
-					aria-label="Set increment amount"
+					aria-label='Set increment amount'
 					value={incrementAmount}
-					onChange={e => setIncrementAmount(e.target.value)}
+					onChange={(e) => setIncrementAmount(e.target.value)}
 				/>
 				<button
 					onClick={() =>
