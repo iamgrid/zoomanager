@@ -25,7 +25,7 @@
 }
 
 .header__view_selector_label::after {
-	content: ":";
+	content: ':';
 }
 
 .header__view_selector {
@@ -46,5 +46,6 @@
 }
 
 .header__view_selector_button--active {
+	cursor: default;
 	background: yellow;
 }

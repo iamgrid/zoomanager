@@ -6,16 +6,23 @@ import { Provider } from 'react-redux';
 import userEvent from '@testing-library/user-event';
 
 beforeEach(() => {
-	render(<Provider store={store}><App/></Provider>)
+	render(
+		<Provider store={store}>
+			<App />
+		</Provider>
+	);
 });
 
 test('renders header', () => {
-	screen.getByText(/zoomanager/i);
+	expect(screen.getByText(/zoomanager/i)).toBeInTheDocument();
+	expect(screen.getByText(/views/i)).toBeInTheDocument();
 });
 
 test('clicking on a view button will change it to be the active view', () => {
 	const secondViewButton = screen.getAllByTestId('view_changer_button')[1];
-	expect(secondViewButton).not.toHaveClass('header__view_selector_button--active');
+	expect(secondViewButton).not.toHaveClass(
+		'header__view_selector_button--active'
+	);
 	userEvent.click(secondViewButton);
 	expect(secondViewButton).toHaveClass('header__view_selector_button--active');
 });

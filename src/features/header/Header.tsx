@@ -1,5 +1,5 @@
 import React from 'react';
-import { capitalize } from '../../common/helpers';
+import { capitalize } from '../../utils/helpers';
 
 interface HeaderProps {
 	views: string[];
@@ -12,6 +12,10 @@ export default function Header({
 	activeView,
 	setActiveView,
 }: HeaderProps) {
+	function handleViewSelection(newView: string): void {
+		if (newView !== activeView) setActiveView(newView);
+	}
+
 	return (
 		<header className='header'>
 			<h1 className='header__app_name'>ZooManager</h1>
@@ -31,7 +35,7 @@ export default function Header({
 						<button
 							key={ix}
 							className={classes.join(' ')}
-							onClick={() => setActiveView(el)}
+							onClick={() => handleViewSelection(el)}
 							data-testid='view_changer_button'
 						>
 							{capitalize(el)}
