@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
-// import { dataItem } from './mainDataInterface';
+import { dataItem } from './mainDataInterface';
 import useLocalStorage from '../../utils/useLocalStorage';
 import { useSelector, useDispatch } from 'react-redux';
 import { load, selectData } from './mainSlice';
@@ -10,30 +10,28 @@ interface MainProps {
 }
 
 export default function Main({ activeView }: MainProps) {
-	const [localStorageData, setLocalStorageData] = useLocalStorage('data', [
-		'newVisitor',
-	]);
+	const [localStorageData, setLocalStorageData] = useLocalStorage('data', {
+		newVisitor: true,
+		actual: [],
+	});
 	const storeData = useSelector(selectData);
 	const dispatch = useDispatch();
-	// const [dataWasLoaded, setDataWasLoaded] = React.useState(false);
 
 	useEffect(() => {
 		let loadWasRun: boolean = false;
-		function loadDataIntoMainStore(data: any): void {
+		function loadDataIntoMainStore(data: dataItem[]): void {
 			dispatch(load(data));
-			// setDataWasLoaded(true);
 		}
 
-		if (localStorageData[0] === 'newVisitor') {
+		if (localStorageData.newVisitor) {
 			// this user has no localStorage data stored for us,
 			// we'll fetch the contents of initialData.json to populate it
-			// const fetchUrl = 'https://iamgrid.co.uk/zoomanager/initialData.json';
 			const fetchUrl = '/zoomanager/initialData.json';
 			axios
 				.get(fetchUrl)
 				.then((response) => {
 					console.log(response);
-					setLocalStorageData(response.data);
+					setLocalStorageData({ newVisitor: false, actual: response.data });
 					loadDataIntoMainStore(response.data);
 					loadWasRun = true;
 				})
@@ -43,11 +41,11 @@ export default function Main({ activeView }: MainProps) {
 		}
 
 		if (!loadWasRun) {
-			loadDataIntoMainStore(localStorageData);
+			loadDataIntoMainStore(localStorageData.actual);
 		}
 	}, [localStorageData, setLocalStorageData, dispatch]);
 
-	function renderDataTable(): JSX.Element | null {
+	function renderDataTable(): React.ReactElement | null {
 		if (storeData.length < 1) return null;
 		return (
 			<table>

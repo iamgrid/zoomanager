@@ -1,2 +1,3 @@
 # ZooManager
-ZooManager is a dynamic CRUD application built with React, Redux, TypeScript, React Testing Library and Jest
+
+ZooManager is a dynamic CRUD application built with React, Redux Toolkit, TypeScript, React Testing Library and Jest
