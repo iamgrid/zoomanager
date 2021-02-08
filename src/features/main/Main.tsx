@@ -30,7 +30,7 @@ export default function Main({ activeView }: MainProps) {
 			axios
 				.get(fetchUrl)
 				.then((response) => {
-					console.log(response);
+					// console.log(response.data);
 					setLocalStorageData({ newVisitor: false, actual: response.data });
 					loadDataIntoMainStore(response.data);
 					loadWasRun = true;
@@ -43,12 +43,14 @@ export default function Main({ activeView }: MainProps) {
 		if (!loadWasRun) {
 			loadDataIntoMainStore(localStorageData.actual);
 		}
-	}, [localStorageData, setLocalStorageData, dispatch]);
+	});
 
 	function renderDataTable(): React.ReactElement | null {
+		if (storeData === undefined) return null;
 		if (storeData.length < 1) return null;
+		// console.log(storeData);
 		return (
-			<table>
+			<table data-testid='data_table'>
 				<thead>
 					<tr>
 						<th>Name</th>

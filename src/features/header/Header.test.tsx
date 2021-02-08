@@ -4,13 +4,19 @@ import App from '../../App';
 import { store } from '../../store';
 import { Provider } from 'react-redux';
 import userEvent from '@testing-library/user-event';
+import { act } from 'react-dom/test-utils';
 
-beforeEach(() => {
-	render(
-		<Provider store={store}>
-			<App />
-		</Provider>
-	);
+beforeEach(async () => {
+	act(() => {
+		render(
+			<Provider store={store}>
+				<App />
+			</Provider>
+		);
+	});
+	await screen.findByTestId('data_table');
+	// need the above lines so that MSW (mock service worker) and jest-localstorage-mock
+	// have enough time to get their ducks in a row
 });
 
 test('renders header', () => {
