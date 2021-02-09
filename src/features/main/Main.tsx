@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
-import { dataItem } from './mainDataInterface';
+import { dataItem } from '../../types';
 import useLocalStorage from '../../utils/useLocalStorage';
 import { useSelector, useDispatch } from 'react-redux';
 import { load, selectData } from './mainSlice';

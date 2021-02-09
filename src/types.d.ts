@@ -1,3 +1,5 @@
+export type view = 'exposition' | 'verse' | 'coda';
+
 export interface dataItem {
 	id: string;
 	name: string;

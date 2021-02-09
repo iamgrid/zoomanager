@@ -2,11 +2,12 @@ import React from 'react';
 import './App.css';
 import Header from './features/header/Header';
 import Main from './features/main/Main';
+import { view } from './types';
 
-const views: string[] = ['exposition', 'verse', 'coda'];
+const views: view[] = ['exposition', 'verse', 'coda'];
 
 function App() {
-	const [activeView, setActiveView] = React.useState(views[0]);
+	const [activeView, setActiveView] = React.useState<view>(views[0]);
 	return (
 		<div className='App' aria-label='App container'>
 			<Header

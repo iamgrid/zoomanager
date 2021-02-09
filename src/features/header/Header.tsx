@@ -1,18 +1,19 @@
 import React from 'react';
 import { capitalize } from '../../utils/helpers';
+import { view } from '../../types';
 
 interface HeaderProps {
-	views: string[];
-	activeView: string;
-	setActiveView(newActiveView: string): void;
+	views: view[];
+	activeView: view;
+	setActiveView(newActiveView: view): void;
 }
 
 export default function Header({
 	views,
 	activeView,
 	setActiveView,
-}: HeaderProps) {
-	function handleViewSelection(newView: string): void {
+}: HeaderProps): React.ReactElement {
+	function handleViewSelection(newView: view): void {
 		if (newView !== activeView) setActiveView(newView);
 	}
 
