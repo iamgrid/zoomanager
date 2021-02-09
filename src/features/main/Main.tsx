@@ -1,15 +1,13 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { dataItem } from '../../types';
+// import { ViewContext } from '../../ViewContext';
 import useLocalStorage from '../../utils/useLocalStorage';
 import { useSelector, useDispatch } from 'react-redux';
 import { load, selectData } from './mainSlice';
 
-interface MainProps {
-	activeView: string;
-}
-
-export default function Main({ activeView }: MainProps) {
+export default function Main(): React.ReactElement {
+	// const { activeView } = React.useContext(ViewContext);
 	const [localStorageData, setLocalStorageData] = useLocalStorage('data', {
 		newVisitor: true,
 		actual: [],

@@ -1,18 +1,14 @@
 import React from 'react';
 import { capitalize } from '../../utils/helpers';
 import { view } from '../../types';
+import { ViewContext } from '../../ViewContext';
 
 interface HeaderProps {
 	views: view[];
-	activeView: view;
-	setActiveView(newActiveView: view): void;
 }
 
-export default function Header({
-	views,
-	activeView,
-	setActiveView,
-}: HeaderProps): React.ReactElement {
+export default function Header({ views }: HeaderProps): React.ReactElement {
+	const { activeView, setActiveView } = React.useContext(ViewContext);
 	function handleViewSelection(newView: view): void {
 		if (newView !== activeView) setActiveView(newView);
 	}
