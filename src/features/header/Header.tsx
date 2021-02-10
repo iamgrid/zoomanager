@@ -1,14 +1,10 @@
 import React from 'react';
 import { capitalize } from '../../utils/helpers';
-import { view } from '../../types';
-import { ViewContext } from '../../ViewContext';
+import { view, useView } from '../../ViewContext';
 
-interface HeaderProps {
-	views: view[];
-}
+export default function Header(): React.ReactElement {
+	const { activeView, setActiveView } = useView();
 
-export default function Header({ views }: HeaderProps): React.ReactElement {
-	const { activeView, setActiveView } = React.useContext(ViewContext);
 	function handleViewSelection(newView: view): void {
 		if (newView !== activeView) setActiveView(newView);
 	}
@@ -23,14 +19,14 @@ export default function Header({ views }: HeaderProps): React.ReactElement {
 				Views
 			</label>
 			<div className='header__view_selector'>
-				{views.map((el, ix) => {
+				{Object.values(view).map((el) => {
 					let classes = ['header__view_selector_button'];
 					if (el === activeView)
 						classes.push('header__view_selector_button--active');
 
 					return (
 						<button
-							key={ix}
+							key={el}
 							className={classes.join(' ')}
 							onClick={() => handleViewSelection(el)}
 							data-testid='view_changer_button'
