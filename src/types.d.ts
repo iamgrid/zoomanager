@@ -18,9 +18,8 @@ export interface dataItem {
 	notes: string;
 }
 
-export interface commonFieldConfigItem {
+export interface rawCommonFieldConfigItem {
 	name: string;
-	showAsTitleInstead: boolean;
 	inputType: string;
 	regexType: string;
 	minLength: number;
@@ -30,7 +29,8 @@ export interface commonFieldConfigItem {
 	description: string;
 }
 
-export interface expositionFieldConfigItem {
+export interface rawExpositionFieldConfigItem {
+	id: string;
 	required: boolean;
 	editable: boolean;
 	sectionLinePosition: string;
@@ -41,23 +41,73 @@ export interface expositionFieldConfigItem {
 	suffix: string;
 }
 
-export interface verseFieldConfigItem {
+export interface expositionFieldConfig {
+	[section: number]: {
+		[line: number]: {
+			[entry: number]: {
+				id: string;
+				name: string;
+				inputType: string;
+				regexType: string;
+				minLength: number;
+				maxLength: number;
+				options: string;
+				initialValue: string;
+				description: string;
+				required: boolean;
+				editable: boolean;
+				icon: string;
+				fontSize: string;
+				cssClass: string;
+				prefix: string;
+				suffix: string;
+			};
+		};
+	};
+}
+
+export interface rawVerseFieldConfigItem {
+	id: string;
 	visible: boolean;
-	sectionLine: string;
+	sectionLinePosition: string;
 	fontSize: string;
 	cssClass: string;
 	prefix: string;
 	suffix: string;
 }
 
-export interface fieldConfigs {
+export interface verseFieldConfig {
+	[section: number]: {
+		[line: number]: {
+			[entry: number]: {
+				id: string;
+				name: string;
+				inputType: string;
+				regexType: string;
+				minLength: number;
+				maxLength: number;
+				options: string;
+				initialValue: string;
+				description: string;
+				visible: boolean;
+				fontSize: string;
+				cssClass: string;
+				prefix: string;
+				suffix: string;
+			};
+		};
+	};
+}
+
+export interface rawFieldConfigs {
 	common: {
-		[prop: string]: commonFieldConfigItem;
+		[prop: string]: rawCommonFieldConfigItem;
 	};
-	exposition: {
-		[prop: string]: expositionFieldConfigItem;
-	};
-	verse: {
-		[prop: string]: verseFieldConfigItem;
-	};
+	exposition: rawExpositionFieldConfigItem[];
+	verse: rawVerseFieldConfigItem[];
+}
+
+export interface fieldConfigs {
+	exposition: expositionFieldConfig;
+	verse: verseFieldConfig;
 }

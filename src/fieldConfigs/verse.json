@@ -1,76 +1,85 @@
-{
-	"name": {
+[
+	{
+		"id": "name",
 		"visible": true,
-		"sectionLine": "1|10",
+		"sectionLinePosition": "1|10|10",
 		"fontSize": "xl",
 		"cssClass": "hl1",
 		"prefix": "",
 		"suffix": ""
 	},
-	"species": {
+	{
+		"id": "species",
 		"visible": true,
-		"sectionLine": "1|20",
+		"sectionLinePosition": "1|20|10",
 		"fontSize": "md",
 		"cssClass": "hl3",
 		"prefix": "",
 		"suffix": ""
 	},
-	"date_of_birth": {
+	{
+		"id": "date_of_birth",
 		"visible": true,
-		"sectionLine": "2|20",
+		"sectionLinePosition": "2|20|10",
 		"icon": "gift",
 		"fontSize": "md",
 		"cssClass": "default",
 		"prefix": "",
 		"suffix": " year(s) old"
 	},
-	"gender": {
+	{
+		"id": "gender",
 		"visible": true,
-		"sectionLine": "2|10",
+		"sectionLinePosition": "2|10|10",
 		"fontSize": "md",
 		"cssClass": "default",
 		"prefix": " \u00b7 ",
 		"suffix": ""
 	},
-	"location": {
+	{
+		"id": "location",
 		"visible": true,
-		"sectionLine": "3|10",
+		"sectionLinePosition": "3|10|10",
 		"icon": "map-marker",
 		"fontSize": "md",
 		"cssClass": "default",
 		"prefix": "Location: ",
 		"suffix": ""
 	},
-	"enclosure": {
+	{
+		"id": "enclosure",
 		"visible": true,
-		"sectionLine": "3|20",
+		"sectionLinePosition": "3|20|10",
 		"fontSize": "md",
 		"cssClass": "default",
 		"prefix": "Enclosure: ",
 		"suffix": ""
 	},
-	"dietary_restrictions": {
+	{
+		"id": "dietary_restrictions",
 		"visible": false,
-		"sectionLine": "",
+		"sectionLinePosition": "",
 		"fontSize": "",
 		"cssClass": "",
 		"prefix": "",
 		"suffix": ""
 	},
-	"public_notes": {
+	{
+		"id": "public_notes",
 		"visible": true,
-		"sectionLine": "4|10",
+		"sectionLinePosition": "4|10|10",
 		"fontSize": "md",
 		"cssClass": "default",
 		"prefix": "",
 		"suffix": ""
 	},
-	"admin_notes": {
+	{
+		"id": "admin_notes",
 		"visible": false,
-		"sectionLine": "",
+		"sectionLinePosition": "",
 		"fontSize": "",
 		"cssClass": "",
 		"prefix": "",
 		"suffix": ""
 	}
-}
+]

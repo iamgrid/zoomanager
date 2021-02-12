@@ -4,7 +4,10 @@ import { RootState } from '../../store';
 import { dataItem, fieldConfigs } from '../../types';
 
 const initialData: dataItem[] = [];
-const initialFieldConfigs: fieldConfigs | object = {};
+const initialFieldConfigs: fieldConfigs = {
+	exposition: {},
+	verse: {},
+};
 
 const initialState = { data: initialData, fieldConfigs: initialFieldConfigs };
 

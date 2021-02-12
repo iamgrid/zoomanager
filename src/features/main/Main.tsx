@@ -1,9 +1,9 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
-import { dataItem } from '../../types';
+import { dataItem, fieldConfigs, rawFieldConfigs } from '../../types';
 import useLocalStorage from '../../utils/useLocalStorage';
 import { useSelector, useDispatch } from 'react-redux';
-// import { ViewContext } from '../../ViewContext';
+// import { view, ViewContext } from '../../ViewContext';
 import common from '../../fieldConfigs/common.json';
 import exposition from '../../fieldConfigs/exposition.json';
 import verse from '../../fieldConfigs/verse.json';
@@ -13,6 +13,7 @@ import {
 	loadFieldConfigs,
 	selectFieldConfigs,
 } from './mainSlice';
+import { processFieldConfigs } from '../../utils/helpers';
 
 export default function Main(): React.ReactElement {
 	// const { activeView } = React.useContext(ViewContext);
@@ -27,7 +28,13 @@ export default function Main(): React.ReactElement {
 	console.log(storeFieldConfigs);
 
 	useEffect(() => {
-		dispatch(loadFieldConfigs({ common, exposition, verse }));
+		const rawFieldConfigs: rawFieldConfigs = { common, exposition, verse };
+		const processedFieldConfigs: fieldConfigs = processFieldConfigs(
+			rawFieldConfigs
+		);
+		dispatch(loadFieldConfigs(processedFieldConfigs));
+
+		console.log('ran loadFieldConfigs effect');
 	}, [dispatch]);
 
 	useEffect(() => {
@@ -88,9 +95,27 @@ export default function Main(): React.ReactElement {
 		);
 	}
 
+	// function dataDisplay(): React.ReactElement | null {
+	// 	if (storeData === undefined) return null;
+	// 	if (storeData.length < 1) return null;
+	// 	if (Object.keys(storeFieldConfigs.common).length < 1) return null;
+
+	// 	return (
+	// 		<div
+	// 			data-testid='data-display'
+	// 			className={'data_display data_display--' + activeView}
+	// 		>
+	// 			{Object.keys(storeFieldConfigs.common).map((field) => {
+	// 				return field;
+	// 			})}
+	// 		</div>
+	// 	);
+	// }
+
 	return (
 		<div className='main' id='main'>
 			{renderDataTable()}
+			{/* {dataDisplay()} */}
 		</div>
 	);
 }

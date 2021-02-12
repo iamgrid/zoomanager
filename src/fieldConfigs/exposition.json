@@ -1,5 +1,6 @@
-{
-	"name": {
+[
+	{
+		"id": "name",
 		"required": true,
 		"editable": true,
 		"sectionLinePosition": "1|10|10",
@@ -9,7 +10,8 @@
 		"prefix": "",
 		"suffix": ""
 	},
-	"species": {
+	{
+		"id": "species",
 		"required": true,
 		"editable": true,
 		"sectionLinePosition": "1|20|10",
@@ -19,7 +21,8 @@
 		"prefix": "",
 		"suffix": ""
 	},
-	"date_of_birth": {
+	{
+		"id": "date_of_birth",
 		"required": true,
 		"editable": true,
 		"sectionLinePosition": "1|30|10",
@@ -27,9 +30,10 @@
 		"fontSize": "md",
 		"cssClass": "default",
 		"prefix": "",
-		"suffix": " year old"
+		"suffix": ""
 	},
-	"gender": {
+	{
+		"id": "gender",
 		"required": true,
 		"editable": true,
 		"sectionLinePosition": "1|30|20",
@@ -39,7 +43,8 @@
 		"prefix": " \u00b7 ",
 		"suffix": ""
 	},
-	"location": {
+	{
+		"id": "location",
 		"required": true,
 		"editable": true,
 		"sectionLinePosition": "1|40|10",
@@ -49,7 +54,8 @@
 		"prefix": "",
 		"suffix": ""
 	},
-	"enclosure": {
+	{
+		"id": "enclosure",
 		"required": true,
 		"editable": true,
 		"sectionLinePosition": "1|40|20",
@@ -59,7 +65,8 @@
 		"prefix": " \u00b7 ",
 		"suffix": ""
 	},
-	"dietary_restrictions": {
+	{
+		"id": "dietary_restrictions",
 		"required": false,
 		"editable": true,
 		"sectionLinePosition": "2|10|10",
@@ -69,7 +76,8 @@
 		"prefix": "",
 		"suffix": ""
 	},
-	"public_notes": {
+	{
+		"id": "public_notes",
 		"required": false,
 		"editable": true,
 		"sectionLinePosition": "3|10|10",
@@ -79,7 +87,8 @@
 		"prefix": "",
 		"suffix": ""
 	},
-	"admin_notes": {
+	{
+		"id": "admin_notes",
 		"required": false,
 		"editable": true,
 		"sectionLinePosition": "3|20|10",
@@ -89,4 +98,4 @@
 		"prefix": "",
 		"suffix": ""
 	}
-}
+]
