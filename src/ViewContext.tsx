@@ -3,7 +3,6 @@ import React from 'react';
 export enum view {
 	exposition = 'exposition',
 	verse = 'verse',
-	coda = 'coda',
 }
 
 interface providerValue {

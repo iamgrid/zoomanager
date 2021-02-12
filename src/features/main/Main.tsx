@@ -1,10 +1,17 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { dataItem } from '../../types';
-// import { ViewContext } from '../../ViewContext';
 import useLocalStorage from '../../utils/useLocalStorage';
 import { useSelector, useDispatch } from 'react-redux';
-import { load, selectData } from './mainSlice';
+// import { ViewContext } from '../../ViewContext';
+import common from '../../fieldConfigs/common.json';
+import exposition from '../../fieldConfigs/exposition.json';
+import {
+	loadData,
+	selectData,
+	loadFieldConfigs,
+	selectFieldConfigs,
+} from './mainSlice';
 
 export default function Main(): React.ReactElement {
 	// const { activeView } = React.useContext(ViewContext);
@@ -12,13 +19,20 @@ export default function Main(): React.ReactElement {
 		newVisitor: true,
 		actual: [],
 	});
-	const storeData = useSelector(selectData);
+
 	const dispatch = useDispatch();
+	const storeData = useSelector(selectData);
+	const storeFieldConfigs = useSelector(selectFieldConfigs);
+	console.log(storeFieldConfigs);
 
 	useEffect(() => {
-		let loadWasRun: boolean = false;
+		dispatch(loadFieldConfigs({ common: common, exposition: exposition }));
+	}, [dispatch]);
+
+	useEffect(() => {
+		let loadDataWasRun: boolean = false;
 		function loadDataIntoMainStore(data: dataItem[]): void {
-			dispatch(load(data));
+			dispatch(loadData(data));
 		}
 
 		if (localStorageData.newVisitor) {
@@ -31,14 +45,14 @@ export default function Main(): React.ReactElement {
 					// console.log(response.data);
 					setLocalStorageData({ newVisitor: false, actual: response.data });
 					loadDataIntoMainStore(response.data);
-					loadWasRun = true;
+					loadDataWasRun = true;
 				})
 				.catch((error) => {
 					console.error(error);
 				});
 		}
 
-		if (!loadWasRun) {
+		if (!loadDataWasRun) {
 			loadDataIntoMainStore(localStorageData.actual);
 		}
 	});

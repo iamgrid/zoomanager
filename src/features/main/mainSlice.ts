@@ -1,17 +1,22 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 // import { AppThunk, RootState } from '../../store';
 import { RootState } from '../../store';
-import { dataItem } from '../../types';
+import { dataItem, fieldConfigs } from '../../types';
 
 const initialData: dataItem[] = [];
-const initialState = { data: initialData };
+const initialFieldConfigs: fieldConfigs | object = {};
+
+const initialState = { data: initialData, fieldConfigs: initialFieldConfigs };
 
 export const mainSlice = createSlice({
 	name: 'main',
 	initialState,
 	reducers: {
-		load: (state, action: PayloadAction<dataItem[]>) => {
+		loadData: (state, action: PayloadAction<dataItem[]>) => {
 			state.data = action.payload;
+		},
+		loadFieldConfigs: (state, action: PayloadAction<fieldConfigs>) => {
+			state.fieldConfigs = action.payload;
 		},
 		/*addRecord: state => {
 			// state.value -= 1;
@@ -25,7 +30,7 @@ export const mainSlice = createSlice({
 	},
 });
 
-export const { load } = mainSlice.actions;
+export const { loadData, loadFieldConfigs } = mainSlice.actions;
 
 // export const incrementAsync = (amount: number): AppThunk => dispatch => {
 // 	setTimeout(() => {
@@ -34,5 +39,6 @@ export const { load } = mainSlice.actions;
 // };
 
 export const selectData = (state: RootState) => state.main.data;
+export const selectFieldConfigs = (state: RootState) => state.main.fieldConfigs;
 
 export default mainSlice.reducer;

@@ -1,0 +1,82 @@
+{
+	"name": {
+		"required": true,
+		"editable": true,
+		"sectionLinePosition": "1|10|10",
+		"icon": "none",
+		"fontSize": "xl",
+		"cssClass": "hl1",
+		"prefix": "",
+		"suffix": ""
+	},
+	"species": {
+		"required": true,
+		"editable": true,
+		"sectionLinePosition": "1|20|10",
+		"icon": "none",
+		"fontSize": "md",
+		"cssClass": "hl3",
+		"prefix": "",
+		"suffix": ""
+	},
+	"date_of_birth": {
+		"required": true,
+		"editable": true,
+		"sectionLinePosition": "1|30|10",
+		"icon": "gift",
+		"fontSize": "md",
+		"cssClass": "default",
+		"prefix": "",
+		"suffix": " year old"
+	},
+	"gender": {
+		"required": true,
+		"editable": true,
+		"sectionLinePosition": "1|30|20",
+		"icon": "none",
+		"fontSize": "md",
+		"cssClass": "default",
+		"prefix": " \u00b7 ",
+		"suffix": ""
+	},
+	"location": {
+		"required": true,
+		"editable": true,
+		"sectionLinePosition": "1|40|10",
+		"icon": "map-marker",
+		"fontSize": "md",
+		"cssClass": "default",
+		"prefix": "",
+		"suffix": ""
+	},
+	"enclosure": {
+		"required": true,
+		"editable": true,
+		"sectionLinePosition": "1|40|20",
+		"icon": "none",
+		"fontSize": "md",
+		"cssClass": "default",
+		"prefix": " \u00b7 ",
+		"suffix": ""
+	},
+	"dietary_restrictions": {
+		"required": false,
+		"editable": true,
+		"sectionLinePosition": "2|10|10",
+		"icon": "none",
+		"fontSize": "md",
+		"cssClass": "default",
+		"prefix": "",
+		"suffix": ""
+	},
+	"notes": {
+		"required": false,
+		"editable": true,
+		"sectionLinePosition": "3|10|10",
+		"icon": "none",
+		"fontSize": "md",
+		"cssClass": "default",
+		"prefix": "",
+		"suffix": ""
+	}
+}
