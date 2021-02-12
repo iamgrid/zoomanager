@@ -9,6 +9,11 @@ export function capitalize(input: string): string {
 }
 
 export function processFieldConfigs(rawConfigs: rawFieldConfigs): fieldConfigs {
+	// organizes fields for easy iteration
+	// based on their sectionLinePosition property,
+	// combines common field settings with each named variant,
+	// e.g. exposition = exposition + common
+
 	const re: fieldConfigs = { exposition: {}, verse: {} };
 
 	Object.values(view).forEach((currentView) => {

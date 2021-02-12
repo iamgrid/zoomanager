@@ -41,27 +41,14 @@ export interface rawExpositionFieldConfigItem {
 	suffix: string;
 }
 
+export interface completeExpositionFieldConfigItem
+	extends rawCommonFieldConfigItem,
+		rawExpositionFieldConfigItem {}
+
 export interface expositionFieldConfig {
 	[section: number]: {
 		[line: number]: {
-			[entry: number]: {
-				id: string;
-				name: string;
-				inputType: string;
-				regexType: string;
-				minLength: number;
-				maxLength: number;
-				options: string;
-				initialValue: string;
-				description: string;
-				required: boolean;
-				editable: boolean;
-				icon: string;
-				fontSize: string;
-				cssClass: string;
-				prefix: string;
-				suffix: string;
-			};
+			[entry: number]: completeExpositionFieldConfigItem;
 		};
 	};
 }
@@ -76,25 +63,14 @@ export interface rawVerseFieldConfigItem {
 	suffix: string;
 }
 
+export interface completeVerseFieldConfigItem
+	extends rawCommonFieldConfigItem,
+		rawVerseFieldConfigItem {}
+
 export interface verseFieldConfig {
 	[section: number]: {
 		[line: number]: {
-			[entry: number]: {
-				id: string;
-				name: string;
-				inputType: string;
-				regexType: string;
-				minLength: number;
-				maxLength: number;
-				options: string;
-				initialValue: string;
-				description: string;
-				visible: boolean;
-				fontSize: string;
-				cssClass: string;
-				prefix: string;
-				suffix: string;
-			};
+			[entry: number]: completeVerseFieldConfigItem;
 		};
 	};
 }
