@@ -41,11 +41,23 @@ export interface expositionFieldConfigItem {
 	suffix: string;
 }
 
+export interface verseFieldConfigItem {
+	visible: boolean;
+	sectionLine: string;
+	fontSize: string;
+	cssClass: string;
+	prefix: string;
+	suffix: string;
+}
+
 export interface fieldConfigs {
 	common: {
 		[prop: string]: commonFieldConfigItem;
 	};
 	exposition: {
 		[prop: string]: expositionFieldConfigItem;
+	};
+	verse: {
+		[prop: string]: verseFieldConfigItem;
 	};
 }

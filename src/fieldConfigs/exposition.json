@@ -69,10 +69,20 @@
 		"prefix": "",
 		"suffix": ""
 	},
-	"notes": {
+	"public_notes": {
 		"required": false,
 		"editable": true,
 		"sectionLinePosition": "3|10|10",
+		"icon": "none",
+		"fontSize": "md",
+		"cssClass": "default",
+		"prefix": "",
+		"suffix": ""
+	},
+	"admin_notes": {
+		"required": false,
+		"editable": true,
+		"sectionLinePosition": "3|20|10",
 		"icon": "none",
 		"fontSize": "md",
 		"cssClass": "default",

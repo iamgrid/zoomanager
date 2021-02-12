@@ -76,8 +76,19 @@
 		"initialValue": "",
 		"description": ""
 	},
-	"notes": {
-		"name": "notes",
+	"public_notes": {
+		"name": "Public notes",
+		"showAsTitleInstead": false,
+		"inputType": "textarea",
+		"regexType": "notes",
+		"minLength": 0,
+		"maxLength": 500,
+		"options": "",
+		"initialValue": "",
+		"description": ""
+	},
+	"admin_notes": {
+		"name": "Admin notes",
 		"showAsTitleInstead": false,
 		"inputType": "textarea",
 		"regexType": "notes",

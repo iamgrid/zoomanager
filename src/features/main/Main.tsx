@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 // import { ViewContext } from '../../ViewContext';
 import common from '../../fieldConfigs/common.json';
 import exposition from '../../fieldConfigs/exposition.json';
+import verse from '../../fieldConfigs/verse.json';
 import {
 	loadData,
 	selectData,
@@ -26,7 +27,7 @@ export default function Main(): React.ReactElement {
 	console.log(storeFieldConfigs);
 
 	useEffect(() => {
-		dispatch(loadFieldConfigs({ common: common, exposition: exposition }));
+		dispatch(loadFieldConfigs({ common, exposition, verse }));
 	}, [dispatch]);
 
 	useEffect(() => {
