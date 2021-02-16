@@ -14,7 +14,8 @@ const handlers = [
 				"location": "With us",
 				"enclosure": "Savanna",
 				"dietary_restrictions": "",
-				"notes": "Lorem ipsum denem sit amet"
+				"public_notes": "Lorem ipsum denem sit amet",
+				"admin_notes": ""
 			},
 			{
 				"id": "6e671edd-d261-4019-ac77-e7e704f60150",
@@ -25,7 +26,8 @@ const handlers = [
 				"location": "With us",
 				"enclosure": "Savanna",
 				"dietary_restrictions": "High chloresterol",
-				"notes": "Accentuer elit"
+				"public_notes": "Accentuer elit",
+				"admin_notes": ""
 			}
 		]));
 	}),

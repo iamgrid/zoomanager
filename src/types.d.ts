@@ -15,8 +15,11 @@ export interface dataItem {
 		| 'Madagascar House'
 		| 'India House';
 	dietary_restrictions: string;
-	notes: string;
+	public_notes: string;
+	admin_notes: string;
 }
+
+export type configItemId = keyof dataItem;
 
 export interface rawCommonFieldConfigItem {
 	name: string;
@@ -30,7 +33,7 @@ export interface rawCommonFieldConfigItem {
 }
 
 export interface rawExpositionFieldConfigItem {
-	id: string;
+	id: configItemId;
 	required: boolean;
 	editable: boolean;
 	sectionLinePosition: string;
@@ -54,7 +57,7 @@ export interface expositionFieldConfig {
 }
 
 export interface rawVerseFieldConfigItem {
-	id: string;
+	id: configItemId;
 	visible: boolean;
 	sectionLinePosition: string;
 	fontSize: string;

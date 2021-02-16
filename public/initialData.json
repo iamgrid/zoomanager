@@ -8,7 +8,8 @@
 		"location": "With us",
 		"enclosure": "Savanna",
 		"dietary_restrictions": "",
-		"notes": "Lorem ipsum denem sit amet"
+		"public_notes": "Lorem ipsum denem sit amet",
+		"admin_notes": "Lorem ipsum denem sit amet"
 	},
 	{
 		"id": "6e671edd-d261-4019-ac77-e7e704f60150",
@@ -19,7 +20,8 @@
 		"location": "With us",
 		"enclosure": "Savanna",
 		"dietary_restrictions": "High chloresterol",
-		"notes": "Accentuer elit"
+		"public_notes": "Accentuer elit",
+		"admin_notes": "Lorem ipsum denem sit amet"
 	},
 	{
 		"id": "0b28f578-c079-418f-8663-ad77e25ca01a",
@@ -30,7 +32,8 @@
 		"location": "With us",
 		"enclosure": "Savanna",
 		"dietary_restrictions": "Can't be fed after midnight",
-		"notes": ""
+		"public_notes": "",
+		"admin_notes": ""
 	},
 	{
 		"id": "a07769f6-23b9-4be4-8168-787490ef1532",
@@ -41,7 +44,8 @@
 		"location": "With us",
 		"enclosure": "Savanna",
 		"dietary_restrictions": "",
-		"notes": "Momma of Ashley and Katie"
+		"public_notes": "Momma of Ashley and Katie",
+		"admin_notes": ""
 	},
 	{
 		"id": "7c7f0ae7-24c5-4b2c-9701-363304a8f64f",
@@ -52,7 +56,8 @@
 		"location": "With us",
 		"enclosure": "Savanna",
 		"dietary_restrictions": "",
-		"notes": "Cub of Laura"
+		"public_notes": "Cub of Laura",
+		"admin_notes": ""
 	},
 	{
 		"id": "4b56dc62-8a8e-4617-8963-f0a5ce872f99",
@@ -63,7 +68,8 @@
 		"location": "With us",
 		"enclosure": "Savanna",
 		"dietary_restrictions": "",
-		"notes": "Cub of Laura"
+		"public_notes": "Cub of Laura",
+		"admin_notes": ""
 	},
 	{
 		"id": "61f304e8-5d55-4b8b-b6f5-0e48ae9832db",
@@ -74,7 +80,8 @@
 		"location": "With us",
 		"enclosure": "Savanna",
 		"dietary_restrictions": "",
-		"notes": ""
+		"public_notes": "",
+		"admin_notes": ""
 	},
 	{
 		"id": "427b4ec9-2693-41df-aba0-eeb0eda828eb",
@@ -85,7 +92,8 @@
 		"location": "On loan",
 		"enclosure": "In transit",
 		"dietary_restrictions": "",
-		"notes": "Sister of Raffles"
+		"public_notes": "Sister of Raffles",
+		"admin_notes": ""
 	},
 	{
 		"id": "5527f6cb-2761-4677-ae3b-d0bdadb83b21",
@@ -96,7 +104,8 @@
 		"location": "With us",
 		"enclosure": "Savanna",
 		"dietary_restrictions": "",
-		"notes": "Brother of Kiki"
+		"public_notes": "Brother of Kiki",
+		"admin_notes": ""
 	},
 	{
 		"id": "b57e36db-10ed-4662-88ea-df89731400a1",
@@ -107,7 +116,8 @@
 		"location": "With us",
 		"enclosure": "Savanna",
 		"dietary_restrictions": "Diabetic",
-		"notes": "Brother of Charlie"
+		"public_notes": "Brother of Charlie",
+		"admin_notes": ""
 	},
 	{
 		"id": "4257232c-7f33-4954-8277-c81285bfc2e3",
@@ -118,6 +128,7 @@
 		"location": "With us",
 		"enclosure": "Savanna",
 		"dietary_restrictions": "High blood sugar",
-		"notes": "Brother of Congo"
+		"public_notes": "Brother of Congo",
+		"admin_notes": ""
 	}
 ]

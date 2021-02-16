@@ -61,7 +61,10 @@ export function processFieldConfigs(rawConfigs: rawFieldConfigs): fieldConfigs {
 				for (let line = bounds.line.min; line <= bounds.line.max; line++) {
 					const currentLineItems = Object.values(currentConfig).filter(
 						(item) => {
-							if (item.sectionLinePosition.split('|')[1] === String(line))
+							if (
+								item.sectionLinePosition.split('|')[0] === String(section) &&
+								item.sectionLinePosition.split('|')[1] === String(line)
+							)
 								return item;
 							return false;
 						}

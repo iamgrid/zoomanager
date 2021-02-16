@@ -49,3 +49,9 @@
 	cursor: default;
 	background: yellow;
 }
+
+.data_display--exposition .data_display__item,
+.data_display--verse .data_display__item {
+	border: 1px solid black;
+	margin-bottom: 1em;
+}
