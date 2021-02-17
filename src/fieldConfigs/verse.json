@@ -13,7 +13,7 @@
 		"visible": true,
 		"sectionLinePosition": "1|20|10",
 		"fontSize": "md",
-		"cssClass": "hl3",
+		"cssClass": "hl2",
 		"prefix": "",
 		"suffix": ""
 	},
@@ -31,7 +31,7 @@
 		"visible": true,
 		"sectionLinePosition": "2|10|10",
 		"fontSize": "md",
-		"cssClass": "default",
+		"cssClass": "hl3",
 		"prefix": "",
 		"suffix": ""
 	},

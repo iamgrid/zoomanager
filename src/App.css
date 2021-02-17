@@ -1,60 +1,131 @@
+* {
+	box-sizing: border-box;
+}
+
 :root {
-	--c-text-default: #fafafa;
-	--c-text-hl1: #f59d0a;
-	--c-text-hl2: #51d9ef;
-	--c-text-hl3: #f3c72c;
-	--c-text-hl4: #ffe486;
-	--c-text-ll1: #808080;
-	--c-text-ll2: #cacaca;
-	--c-text-ll3: #aaaaaa;
+	--e-item-stretch-bg: #404040;
+	--e-item-bg: #454545;
+	--e-text-default: #fafafa;
+	--e-text-hl1: #f59d0a;
+	--e-text-hl2: #51d9ef;
+	--e-text-hl3: #f3c72c;
+	--e-text-hl4: #ffe486;
+	--e-text-ll1: #808080;
+	--e-text-ll2: #cacaca;
+	--e-text-ll3: #aaaaaa;
+
+	--v-item-bg: #ffffff;
+	--v-text-default: #303030;
+	--v-text-hl1: #f59d0a;
+	--v-text-hl2: #51d9ef;
+	--v-text-hl3: #f3c72c;
+	--v-text-hl4: #ffe486;
+	--v-text-ll1: #c9c9c9;
+	--v-text-ll2: #cacaca;
+	--v-text-ll3: #aaaaaa;
 }
 
-.text_default {
-	color: var(--c-text-default);
+.text_exposition_default {
+	color: var(--e-text-default);
 }
 
-.text_hl1 {
-	color: var(--c-text-hl1);
+.text_exposition_hl1 {
+	color: var(--e-text-hl1);
 }
 
-.text_hl2 {
-	color: var(--c-text-hl2);
+.text_exposition_hl2 {
+	color: var(--e-text-hl2);
 }
 
-.text_hl3 {
-	color: var(--c-text-hl3);
+.text_exposition_hl3 {
+	color: var(--e-text-hl3);
 }
 
-.text_hl4 {
-	color: var(--c-text-hl4);
+.text_exposition_hl4 {
+	color: var(--e-text-hl4);
 }
 
-.text_ll1 {
-	color: var(--c-text-ll1);
+.text_exposition_ll1 {
+	color: var(--e-text-ll1);
 }
 
-.text_ll2 {
-	color: var(--c-text-ll2);
+.text_exposition_ll2 {
+	color: var(--e-text-ll2);
 }
 
-.text_ll3 {
-	color: var(--c-text-ll3);
+.text_exposition_ll3 {
+	color: var(--e-text-ll3);
 }
 
-.text_sm {
+.text_exposition_sm {
 	font-size: 16px;
 }
 
-.text_md {
+.text_exposition_md {
 	font-size: 18px;
 }
 
-.text_lg {
+.text_exposition_lg {
 	font-size: 22px;
 }
 
-.text_xl {
+.text_exposition_xl {
 	font-size: 28px;
+	line-height: 32px;
+}
+
+.text_verse_default {
+	color: var(--v-text-default);
+}
+
+.text_verse_hl1 {
+	color: var(--v-text-hl1);
+}
+
+.text_verse_hl2 {
+	color: var(--v-text-hl2);
+}
+
+.text_verse_hl3 {
+	color: var(--v-text-hl3);
+}
+
+.text_verse_hl4 {
+	color: var(--v-text-hl4);
+}
+
+.text_verse_ll1 {
+	color: var(--v-text-ll1);
+}
+
+.text_verse_ll2 {
+	color: var(--v-text-ll2);
+}
+
+.text_verse_ll3 {
+	color: var(--v-text-ll3);
+}
+
+.text_verse_sm {
+	font-size: 16px;
+}
+
+.text_verse_md {
+	font-size: 18px;
+}
+
+.text_verse_lg {
+	font-size: 22px;
+}
+
+.text_verse_xl {
+	font-size: 28px;
+	line-height: 32px;
+	width: 100%;
+	text-align: center;
+	border-bottom: 1px dotted gray;
+	padding-bottom: 0.4em;
+	margin-bottom: 0.3em;
 }
 
 body {
@@ -106,14 +177,14 @@ body {
 	border: 0;
 	padding: 0.3em 1em;
 	margin: 0;
-	background: var(--c-text-ll3);
+	background: var(--e-text-ll3);
 	cursor: pointer;
 	/* outline: 0; */
 }
 
 .header__view_selector_button--active {
 	cursor: default;
-	background: var(--c-text-hl4);
+	background: var(--e-text-hl4);
 }
 
 .data_display__item {
@@ -121,18 +192,18 @@ body {
 }
 
 .data_display--verse .data_display__item {
-	border: 1px solid gray;
-	margin-bottom: 1em;
+	/* border: 1px solid gray; */
+	margin: 0.5em 0;
 }
 
 .data_display--exposition .data_display__item_wrapper {
-	background-color: #404040;
+	background-color: var(--e-item-stretch-bg);
 }
 
 .data_display--exposition .data_display__item {
 	margin: 0.5em auto;
 	max-width: 1000px;
-	background-color: #454545;
+	background-color: var(--e-item-bg);
 }
 
 .data_display--exposition .data_display__section {
@@ -168,9 +239,45 @@ body {
 .data_display__row_icon {
 	display: inline-block;
 	margin-right: 0.5em;
-	color: var(--c-text-ll1);
+	color: var(--e-text-ll1);
 }
 
 .data_display__prefix {
-	color: var(--c-text-ll1);
+	color: var(--e-text-ll1);
+}
+
+.data_display--verse .data_display__prefix {
+	color: var(--v-text-ll1);
+}
+
+.data_display--verse {
+	padding: 10px;
+}
+
+.data_display--verse .data_display__item {
+	padding: 1em 1.5em 0.8em;
+	border-radius: 0.5em;
+	background: var(--v-item-bg);
+	box-shadow: 0 0 5px #ff9100af;
+}
+
+@media screen and (min-width: 650px) {
+	.data_display--verse {
+		columns: 2;
+		column-gap: 10px;
+		margin: 0 auto;
+		max-width: 650px;
+	}
+
+	.data_display--verse .data_display__item {
+		width: 310px;
+		display: inline-block;
+	}
+}
+
+@media screen and (min-width: 980px) {
+	.data_display--verse {
+		columns: 3;
+		max-width: 980px;
+	}
 }
