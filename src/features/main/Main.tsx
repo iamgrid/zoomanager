@@ -31,7 +31,7 @@ export default function Main(): React.ReactElement {
 	const dispatch = useDispatch();
 	const storeData = useSelector(selectData);
 	const storeFieldConfigs = useSelector(selectFieldConfigs);
-	console.log(storeFieldConfigs);
+	// console.log(storeFieldConfigs);
 
 	useEffect(() => {
 		const rawFieldConfigs: rawFieldConfigs = {
@@ -89,11 +89,11 @@ export default function Main(): React.ReactElement {
 		if (storeData === undefined) return null;
 		if (storeData.length < 1) return null;
 		if (Object.keys(storeFieldConfigs[activeView]).length < 1) return null;
-		console.log(storeFieldConfigs[activeView]);
+		// console.log(storeFieldConfigs[activeView]);
 
 		return (
 			<div
-				data-testid='data-display'
+				data-testid='data_display'
 				className={'data_display data_display--' + activeView}
 			>
 				{storeData.map((item) => {

@@ -14,7 +14,7 @@ beforeEach(async () => {
 			</Provider>
 		);
 	});
-	await screen.findByTestId('data_table');
+	await screen.findByTestId('data_display');
 	// need the above lines so that MSW (mock service worker) and jest-localstorage-mock
 	// have enough time to get their ducks in a row
 });
