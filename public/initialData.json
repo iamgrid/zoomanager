@@ -8,7 +8,7 @@
 		"location": "With us",
 		"enclosure": "Savanna",
 		"dietary_restrictions": "",
-		"public_notes": "Lorem ipsum denem sit amet",
+		"public_notes": "",
 		"admin_notes": "Lorem ipsum denem sit amet"
 	},
 	{
@@ -20,8 +20,8 @@
 		"location": "With us",
 		"enclosure": "Savanna",
 		"dietary_restrictions": "High chloresterol",
-		"public_notes": "Accentuer elit",
-		"admin_notes": "Lorem ipsum denem sit amet"
+		"public_notes": "",
+		"admin_notes": "Accentuer elit"
 	},
 	{
 		"id": "0b28f578-c079-418f-8663-ad77e25ca01a",

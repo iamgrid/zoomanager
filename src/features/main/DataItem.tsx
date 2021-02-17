@@ -1,6 +1,7 @@
 import React from 'react';
 import { dataItem, expositionFieldConfig, verseFieldConfig } from '../../types';
 // import { ViewContext } from '../../ViewContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface DataItemProps {
 	itemData: dataItem;
@@ -70,12 +71,24 @@ function DataRow({
 	itemData,
 	fieldConfig,
 }: DataRowProps): React.ReactElement {
+	let rowIcon = null;
+	const confIcon = Object.values(fieldConfig[sectionId][rowId])[0].icon;
+	if (confIcon !== undefined) {
+		if (confIcon.length > 0) {
+			rowIcon = (
+				<div className='data_display__row_icon'>
+					<FontAwesomeIcon icon={confIcon} />
+				</div>
+			);
+		}
+	}
 	return (
 		<div
 			className='data_display__row'
 			data-sectionid={sectionId}
 			data-rowid={rowId}
 		>
+			{rowIcon}
 			{Object.keys(fieldConfig[sectionId][rowId]).map((entryId) => {
 				return (
 					<DataEntry

@@ -150,6 +150,12 @@ body {
 	display: inline-block;
 }
 
+.data_display__row_icon {
+	display: inline-block;
+	margin-right: 0.5em;
+	color: var(--c-text-ll1);
+}
+
 .data_display__prefix {
 	color: var(--c-text-ll1);
 }
