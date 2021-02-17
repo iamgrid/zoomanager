@@ -110,15 +110,23 @@ function DataEntry({
 	const entryConfig = fieldConfig[sectionId][rowId][entryId];
 	const entryConfigId = entryConfig.id;
 	let disp = itemData[entryConfigId];
+	const classes = ['data_display__entry'];
+	classes.push('text_' + entryConfig.fontSize);
+	classes.push('text_' + entryConfig.cssClass);
+
 	return (
 		<div
-			className='data_display__entry'
+			className={classes.join(' ')}
 			data-sectionid={sectionId}
 			data-rowid={rowId}
 			data-entryid={entryId}
 			data-tmpid={entryConfigId}
 		>
-			{disp}
+			<span className='data_display__prefix'>
+				{entryConfig.prefix.replace(' ', '\u00A0')}
+			</span>
+			<span className='data_display__entry_proper'>{disp}</span>
+			<span className='data_display__suffix'>{entryConfig.suffix}</span>
 		</div>
 	);
 }

@@ -1,3 +1,68 @@
+:root {
+	--c-text-default: #fafafa;
+	--c-text-hl1: #f59d0a;
+	--c-text-hl2: #51d9ef;
+	--c-text-hl3: #f3c72c;
+	--c-text-hl4: #ffe486;
+	--c-text-ll1: #808080;
+	--c-text-ll2: #cacaca;
+	--c-text-ll3: #aaaaaa;
+}
+
+.text_default {
+	color: var(--c-text-default);
+}
+
+.text_hl1 {
+	color: var(--c-text-hl1);
+}
+
+.text_hl2 {
+	color: var(--c-text-hl2);
+}
+
+.text_hl3 {
+	color: var(--c-text-hl3);
+}
+
+.text_hl4 {
+	color: var(--c-text-hl4);
+}
+
+.text_ll1 {
+	color: var(--c-text-ll1);
+}
+
+.text_ll2 {
+	color: var(--c-text-ll2);
+}
+
+.text_ll3 {
+	color: var(--c-text-ll3);
+}
+
+.text_sm {
+	font-size: 16px;
+}
+
+.text_md {
+	font-size: 18px;
+}
+
+.text_lg {
+	font-size: 22px;
+}
+
+.text_xl {
+	font-size: 28px;
+}
+
+body {
+	color: white;
+	background-color: #303030;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
 .App {
 	display: grid;
 	grid-template-rows: max-content auto;
@@ -16,7 +81,7 @@
 	font-size: 16px;
 	padding: 0;
 	margin: 0;
-	transform: translateY(-2px);
+	/* transform: translateY(-2px); */
 }
 
 .header__view_selector_label {
@@ -41,17 +106,50 @@
 	border: 0;
 	padding: 0.3em 1em;
 	margin: 0;
-	background: green;
+	background: var(--c-text-ll3);
 	cursor: pointer;
+	/* outline: 0; */
 }
 
 .header__view_selector_button--active {
 	cursor: default;
-	background: yellow;
+	background: var(--c-text-hl4);
 }
 
-.data_display--exposition .data_display__item,
+.data_display__item {
+	line-height: 28px;
+}
+
 .data_display--verse .data_display__item {
-	border: 1px solid black;
+	border: 1px solid gray;
 	margin-bottom: 1em;
+}
+
+.data_display--exposition .data_display__item_wrapper {
+	background-color: #404040;
+}
+
+.data_display--exposition .data_display__item {
+	margin: 0.5em auto;
+	display: grid;
+	justify-content: center;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1em;
+	max-width: 1000px;
+	background-color: #454545;
+	border: 1px dashed rgba(255, 255, 255, 0.2);
+	border-top: 0;
+	border-bottom: 0;
+}
+
+.data_display--exposition .data_display__section {
+	padding: 0.5em 1em;
+}
+
+.data_display__entry {
+	display: inline-block;
+}
+
+.data_display__prefix {
+	color: var(--c-text-ll1);
 }

@@ -98,11 +98,12 @@ export default function Main(): React.ReactElement {
 			>
 				{storeData.map((item) => {
 					return (
-						<DataItem
-							key={item.id}
-							itemData={item}
-							fieldConfig={storeFieldConfigs[activeView]}
-						/>
+						<div className='data_display__item_wrapper' key={item.id}>
+							<DataItem
+								itemData={item}
+								fieldConfig={storeFieldConfigs[activeView]}
+							/>
+						</div>
 					);
 				})}
 			</div>

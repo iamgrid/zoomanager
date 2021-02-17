@@ -28,7 +28,7 @@
 		"sectionLinePosition": "1|30|10",
 		"icon": "gift",
 		"fontSize": "md",
-		"cssClass": "default",
+		"cssClass": "ll2",
 		"prefix": "",
 		"suffix": ""
 	},
@@ -39,7 +39,7 @@
 		"sectionLinePosition": "1|30|20",
 		"icon": "none",
 		"fontSize": "md",
-		"cssClass": "default",
+		"cssClass": "ll2",
 		"prefix": " \u00b7 ",
 		"suffix": ""
 	},
@@ -73,7 +73,7 @@
 		"icon": "none",
 		"fontSize": "md",
 		"cssClass": "default",
-		"prefix": "",
+		"prefix": "Dietary restrictions: ",
 		"suffix": ""
 	},
 	{
@@ -84,7 +84,7 @@
 		"icon": "none",
 		"fontSize": "md",
 		"cssClass": "default",
-		"prefix": "",
+		"prefix": "Public notes: ",
 		"suffix": ""
 	},
 	{
@@ -95,7 +95,7 @@
 		"icon": "none",
 		"fontSize": "md",
 		"cssClass": "default",
-		"prefix": "",
+		"prefix": "Admin notes: ",
 		"suffix": ""
 	}
 ]
