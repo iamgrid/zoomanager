@@ -2,8 +2,9 @@ import React from 'react';
 import {
 	completeExpositionFieldConfigItem,
 	completeVerseFieldConfigItem,
+	configItemId,
 } from '../../types';
-import { isFieldConfigItem } from '../../utils/helpers';
+import { getAgeFromBirthday, isFieldConfigItem } from '../../utils/helpers';
 
 function middleClasses(
 	activeView: string,
@@ -39,10 +40,16 @@ interface displayType {
 
 function createDisplay(type: string): displayType {
 	const assembledDisplay = Object.create(genericDisplay);
-	// Object.assign(assembledDisplay, { config });
-	if (type === 'species') {
-		Object.assign(assembledDisplay, speciesDisplay);
+
+	switch (type) {
+		case 'species':
+			Object.assign(assembledDisplay, speciesDisplay);
+			break;
+		case 'date_of_birth':
+			Object.assign(assembledDisplay, dateOfBirthDisplay);
+			break;
 	}
+
 	return assembledDisplay;
 }
 
@@ -93,13 +100,39 @@ const speciesDisplay: any = {
 	},
 };
 
-interface displaysType {
-	[key: string]: displayType;
-}
+const dateOfBirthDisplay: any = {
+	createMiddle(config: configItem, activeView: string, value: string) {
+		if (!isFieldConfigItem(config)) return null;
+		let disp = value;
+		if (config.displaySettings === 'show_age') {
+			disp = String(getAgeFromBirthday(value));
+		}
+		return (
+			<span
+				className={middleClasses(activeView, config.fontSize, config.cssClass)}
+				title={value}
+			>
+				{disp}
+			</span>
+		);
+	},
+};
+
+type displaysType = {
+	[key in configItemId]: displayType;
+};
 
 const displays: displaysType = {
-	generic: genericDisplay,
+	id: genericDisplay,
+	name: genericDisplay,
 	species: createDisplay('species'),
+	date_of_birth: createDisplay('date_of_birth'),
+	gender: genericDisplay,
+	location: genericDisplay,
+	enclosure: genericDisplay,
+	dietary_restrictions: genericDisplay,
+	public_notes: genericDisplay,
+	admin_notes: genericDisplay,
 };
 
 export default displays;

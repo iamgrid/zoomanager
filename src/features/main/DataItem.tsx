@@ -143,16 +143,13 @@ function DataEntry({
 
 	const entryConfig = fieldConfig[sectionId][rowId][entryId];
 	const entryConfigId = entryConfig.id;
-	let disp = itemData[entryConfigId];
+	const disp = itemData[entryConfigId];
 
-	let display;
-	if (entryConfigId === 'species') {
-		display = displays.species;
-	} else {
-		display = displays.generic;
-	}
-
-	const [front, middle, back] = display.combine(entryConfig, activeView, disp);
+	const [front, middle, back] = displays[entryConfigId].combine(
+		entryConfig,
+		activeView,
+		disp
+	);
 
 	return (
 		<div

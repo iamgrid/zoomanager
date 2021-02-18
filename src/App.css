@@ -246,11 +246,13 @@ body {
 	flex: 1 1;
 }
 
-.data_display__prefix {
+.data_display__prefix,
+.data_display__suffix {
 	color: var(--e-text-ll1);
 }
 
-.data_display--verse .data_display__prefix {
+.data_display--verse .data_display__prefix,
+.data_display--verse .data_display__suffix {
 	color: var(--v-text-ll1);
 }
 

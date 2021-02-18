@@ -32,6 +32,17 @@ export function isExpositionFieldConfigItem(
 	return typeof obj.icon === 'string' && typeof obj.required === 'boolean';
 }
 
+export function getAgeFromBirthday(birthday: string): number {
+	const now = new Date().getTime();
+	const bd = new Date(birthday).getTime();
+
+	if (bd > now) return 0;
+
+	const ageInMS = now - bd;
+	const ageDate = new Date(ageInMS);
+	return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+
 export function processFieldConfigs(rawConfigs: rawFieldConfigs): fieldConfigs {
 	// organizes fields for easy iteration
 	// based on their sectionLinePosition property,
