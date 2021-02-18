@@ -7,6 +7,7 @@ import {
 } from '../../types';
 import { ViewContext } from '../../ViewContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import displays from './displays';
 
 interface DataItemProps {
 	itemData: dataItem;
@@ -75,12 +76,15 @@ function DataRow({
 	fieldConfig,
 }: DataRowProps): React.ReactElement | null {
 	let rowIcon = null;
-	const confIcon = Object.values(fieldConfig[sectionId][rowId])[0].icon;
-	if (confIcon !== undefined) {
-		if (confIcon.length > 0) {
+	const firstEntryFieldConfig: any = Object.values(
+		fieldConfig[sectionId][rowId]
+	)[0];
+
+	if (firstEntryFieldConfig.hasOwnProperty('icon')) {
+		if (firstEntryFieldConfig.icon.length > 0) {
 			rowIcon = (
 				<div className='data_display__row_icon'>
-					<FontAwesomeIcon icon={confIcon} />
+					<FontAwesomeIcon icon={firstEntryFieldConfig.icon} />
 				</div>
 			);
 		}
@@ -102,18 +106,20 @@ function DataRow({
 			data-rowid={rowId}
 		>
 			{rowIcon}
-			{Object.keys(fieldConfig[sectionId][rowId]).map((entryId) => {
-				return (
-					<DataEntry
-						key={entryId}
-						sectionId={sectionId}
-						rowId={rowId}
-						entryId={Number(entryId)}
-						itemData={itemData}
-						fieldConfig={fieldConfig}
-					/>
-				);
-			})}
+			<div className='data_display__row_content'>
+				{Object.keys(fieldConfig[sectionId][rowId]).map((entryId) => {
+					return (
+						<DataEntry
+							key={entryId}
+							sectionId={sectionId}
+							rowId={rowId}
+							entryId={Number(entryId)}
+							itemData={itemData}
+							fieldConfig={fieldConfig}
+						/>
+					);
+				})}
+			</div>
 		</div>
 	);
 }
@@ -138,23 +144,27 @@ function DataEntry({
 	const entryConfig = fieldConfig[sectionId][rowId][entryId];
 	const entryConfigId = entryConfig.id;
 	let disp = itemData[entryConfigId];
-	const classes = ['data_display__entry'];
-	classes.push('text_' + activeView + '_' + entryConfig.fontSize);
-	classes.push('text_' + activeView + '_' + entryConfig.cssClass);
+
+	let display;
+	if (entryConfigId === 'species') {
+		display = displays.species;
+	} else {
+		display = displays.generic;
+	}
+
+	const [front, middle, back] = display.combine(entryConfig, activeView, disp);
 
 	return (
 		<div
-			className={classes.join(' ')}
+			className='data_display__entry'
 			data-sectionid={sectionId}
 			data-rowid={rowId}
 			data-entryid={entryId}
 			data-tmpid={entryConfigId}
 		>
-			<span className='data_display__prefix'>
-				{entryConfig.prefix.replace(' ', '\u00A0')}
-			</span>
-			<span className='data_display__entry_proper'>{disp}</span>
-			<span className='data_display__suffix'>{entryConfig.suffix}</span>
+			{front}
+			{middle}
+			{back}
 		</div>
 	);
 }

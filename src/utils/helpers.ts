@@ -1,11 +1,35 @@
 import { view } from '../ViewContext';
-import { rawFieldConfigs, fieldConfigs } from '../types';
+import {
+	rawFieldConfigs,
+	fieldConfigs,
+	completeExpositionFieldConfigItem,
+	completeVerseFieldConfigItem,
+} from '../types';
 
 export function capitalize(input: string): string {
 	return input
 		.split(' ')
 		.map((el) => `${el.substr(0, 1).toUpperCase()}${el.substr(1)}`)
 		.join(' ');
+}
+
+export function hasOwnProperty<X extends {}, Y extends PropertyKey>(
+	obj: X,
+	prop: Y
+): obj is X & Record<Y, unknown> {
+	return obj.hasOwnProperty(prop);
+}
+
+export function isFieldConfigItem(
+	obj: any
+): obj is completeExpositionFieldConfigItem | completeVerseFieldConfigItem {
+	return typeof obj.prefix === 'string' && typeof obj.suffix === 'string';
+}
+
+export function isExpositionFieldConfigItem(
+	obj: any
+): obj is completeExpositionFieldConfigItem {
+	return typeof obj.icon === 'string' && typeof obj.required === 'boolean';
 }
 
 export function processFieldConfigs(rawConfigs: rawFieldConfigs): fieldConfigs {

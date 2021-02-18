@@ -34,6 +34,7 @@ export interface rawCommonFieldConfigItem {
 
 export interface rawExpositionFieldConfigItem {
 	id: configItemId;
+	displaySettings: string;
 	required: boolean;
 	editable: boolean;
 	sectionLinePosition: string;
@@ -58,7 +59,7 @@ export interface expositionFieldConfig {
 
 export interface rawVerseFieldConfigItem {
 	id: configItemId;
-	visible: boolean;
+	displaySettings: string;
 	sectionLinePosition: string;
 	fontSize: string;
 	cssClass: string;

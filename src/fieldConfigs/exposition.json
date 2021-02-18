@@ -1,6 +1,7 @@
 [
 	{
 		"id": "name",
+		"displaySettings": "",
 		"required": true,
 		"editable": true,
 		"sectionLinePosition": "1|10|10",
@@ -12,6 +13,7 @@
 	},
 	{
 		"id": "species",
+		"displaySettings": "show_proper_classification",
 		"required": true,
 		"editable": true,
 		"sectionLinePosition": "1|20|10",
@@ -23,6 +25,7 @@
 	},
 	{
 		"id": "date_of_birth",
+		"displaySettings": "show_date",
 		"required": true,
 		"editable": true,
 		"sectionLinePosition": "1|30|10",
@@ -34,6 +37,7 @@
 	},
 	{
 		"id": "gender",
+		"displaySettings": "",
 		"required": true,
 		"editable": true,
 		"sectionLinePosition": "1|30|20",
@@ -45,6 +49,7 @@
 	},
 	{
 		"id": "location",
+		"displaySettings": "",
 		"required": true,
 		"editable": true,
 		"sectionLinePosition": "1|40|10",
@@ -56,6 +61,7 @@
 	},
 	{
 		"id": "enclosure",
+		"displaySettings": "",
 		"required": true,
 		"editable": true,
 		"sectionLinePosition": "1|40|20",
@@ -67,6 +73,7 @@
 	},
 	{
 		"id": "dietary_restrictions",
+		"displaySettings": "show_species_diet",
 		"required": false,
 		"editable": true,
 		"sectionLinePosition": "2|10|10",
@@ -78,6 +85,7 @@
 	},
 	{
 		"id": "public_notes",
+		"displaySettings": "",
 		"required": false,
 		"editable": true,
 		"sectionLinePosition": "3|10|10",
@@ -89,6 +97,7 @@
 	},
 	{
 		"id": "admin_notes",
+		"displaySettings": "",
 		"required": false,
 		"editable": true,
 		"sectionLinePosition": "3|20|10",
