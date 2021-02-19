@@ -8,15 +8,15 @@
 							"Panthera": {
 								"Panthera leo": {
 									"commonName": "Lion",
-									"diet": "meat"
+									"diet": "meat, fish, termites"
 								},
 								"Panthera pardus": {
 									"commonName": "Leopard",
-									"diet": "meat"
+									"diet": "meat, fish, dung beetles"
 								},
 								"Panthera tigris": {
 									"commonName": "Tiger",
-									"diet": "meat"
+									"diet": "meat, fish"
 								}
 							}
 						}

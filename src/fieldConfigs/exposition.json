@@ -72,14 +72,14 @@
 		"suffix": ""
 	},
 	{
-		"id": "dietary_restrictions",
-		"displaySettings": "show_species_diet",
+		"id": "diet",
+		"displaySettings": "show_both",
 		"required": false,
 		"editable": true,
 		"sectionLinePosition": "2|10|10",
-		"icon": "",
+		"icon": "utensils",
 		"fontSize": "md",
-		"cssClass": "default",
+		"cssClass": "hl4",
 		"prefix": "Dietary restrictions: ",
 		"suffix": ""
 	},

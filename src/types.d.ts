@@ -14,7 +14,7 @@ export interface dataItem {
 		| 'Monkey World'
 		| 'Madagascar House'
 		| 'India House';
-	dietary_restrictions: string;
+	diet: string;
 	public_notes: string;
 	admin_notes: string;
 }
@@ -90,4 +90,13 @@ export interface rawFieldConfigs {
 export interface fieldConfigs {
 	exposition: expositionFieldConfig;
 	verse: verseFieldConfig;
+}
+
+export interface speciesType {
+	commonName: string;
+	diet: string;
+}
+
+export interface speciesCollectionType {
+	[key: string]: speciesType;
 }

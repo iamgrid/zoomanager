@@ -11,7 +11,7 @@
 	{
 		"id": "species",
 		"displaySettings": "show_common_name",
-		"sectionLinePosition": "1|20|10",
+		"sectionLinePosition": "2|10|10",
 		"fontSize": "md",
 		"cssClass": "hl2",
 		"prefix": "",
@@ -20,7 +20,7 @@
 	{
 		"id": "date_of_birth",
 		"displaySettings": "show_age",
-		"sectionLinePosition": "2|20|10",
+		"sectionLinePosition": "3|20|10",
 		"fontSize": "md",
 		"cssClass": "default",
 		"prefix": "",
@@ -29,7 +29,7 @@
 	{
 		"id": "gender",
 		"displaySettings": "",
-		"sectionLinePosition": "2|10|10",
+		"sectionLinePosition": "3|10|10",
 		"fontSize": "md",
 		"cssClass": "hl3",
 		"prefix": "",
@@ -38,7 +38,7 @@
 	{
 		"id": "location",
 		"displaySettings": "",
-		"sectionLinePosition": "3|10|10",
+		"sectionLinePosition": "4|10|10",
 		"fontSize": "md",
 		"cssClass": "default",
 		"prefix": "Location: ",
@@ -47,25 +47,25 @@
 	{
 		"id": "enclosure",
 		"displaySettings": "",
-		"sectionLinePosition": "3|20|10",
+		"sectionLinePosition": "4|20|10",
 		"fontSize": "md",
 		"cssClass": "default",
 		"prefix": "Enclosure: ",
 		"suffix": ""
 	},
 	{
-		"id": "dietary_restrictions",
-		"displaySettings": "",
-		"sectionLinePosition": "",
-		"fontSize": "",
-		"cssClass": "",
-		"prefix": "",
+		"id": "diet",
+		"displaySettings": "show_species_diet",
+		"sectionLinePosition": "5|10|10",
+		"fontSize": "md",
+		"cssClass": "default",
+		"prefix": "Diet: ",
 		"suffix": ""
 	},
 	{
 		"id": "public_notes",
 		"displaySettings": "",
-		"sectionLinePosition": "4|10|10",
+		"sectionLinePosition": "3|30|10",
 		"fontSize": "md",
 		"cssClass": "default",
 		"prefix": "",

@@ -94,6 +94,7 @@ function DataRow({
 	let hasContent = false;
 	Object.values(fieldConfig[sectionId][rowId]).forEach((entry) => {
 		const entryId = entry.id as configItemId;
+		if (entryId === 'diet') hasContent = true;
 		if (itemData[entryId] !== '') hasContent = true;
 	});
 
@@ -148,7 +149,8 @@ function DataEntry({
 	const [front, middle, back] = displays[entryConfigId].combine(
 		entryConfig,
 		activeView,
-		disp
+		disp,
+		itemData
 	);
 
 	return (

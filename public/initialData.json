@@ -7,7 +7,7 @@
 		"gender": "Female",
 		"location": "With us",
 		"enclosure": "Savanna",
-		"dietary_restrictions": "",
+		"diet": "",
 		"public_notes": "",
 		"admin_notes": "Lorem ipsum denem sit amet"
 	},
@@ -19,7 +19,7 @@
 		"gender": "Female",
 		"location": "With us",
 		"enclosure": "Savanna",
-		"dietary_restrictions": "High chloresterol",
+		"diet": "High chloresterol",
 		"public_notes": "",
 		"admin_notes": "Accentuer elit"
 	},
@@ -31,7 +31,7 @@
 		"gender": "Male",
 		"location": "With us",
 		"enclosure": "Savanna",
-		"dietary_restrictions": "Can't be fed after midnight",
+		"diet": "Can't be fed after midnight",
 		"public_notes": "",
 		"admin_notes": ""
 	},
@@ -43,7 +43,7 @@
 		"gender": "Female",
 		"location": "With us",
 		"enclosure": "Savanna",
-		"dietary_restrictions": "",
+		"diet": "",
 		"public_notes": "Momma of Ashley and Katie",
 		"admin_notes": ""
 	},
@@ -55,7 +55,7 @@
 		"gender": "Female",
 		"location": "With us",
 		"enclosure": "Savanna",
-		"dietary_restrictions": "",
+		"diet": "",
 		"public_notes": "Cub of Laura",
 		"admin_notes": ""
 	},
@@ -67,7 +67,7 @@
 		"gender": "Female",
 		"location": "With us",
 		"enclosure": "Savanna",
-		"dietary_restrictions": "",
+		"diet": "",
 		"public_notes": "Cub of Laura",
 		"admin_notes": ""
 	},
@@ -79,7 +79,7 @@
 		"gender": "Male",
 		"location": "With us",
 		"enclosure": "Savanna",
-		"dietary_restrictions": "",
+		"diet": "",
 		"public_notes": "",
 		"admin_notes": ""
 	},
@@ -91,7 +91,7 @@
 		"gender": "Female",
 		"location": "On loan",
 		"enclosure": "In transit",
-		"dietary_restrictions": "",
+		"diet": "",
 		"public_notes": "Sister of Raffles",
 		"admin_notes": ""
 	},
@@ -103,7 +103,7 @@
 		"gender": "Male",
 		"location": "With us",
 		"enclosure": "Savanna",
-		"dietary_restrictions": "",
+		"diet": "",
 		"public_notes": "Brother of Kiki",
 		"admin_notes": ""
 	},
@@ -115,7 +115,7 @@
 		"gender": "Male",
 		"location": "With us",
 		"enclosure": "Savanna",
-		"dietary_restrictions": "Diabetic",
+		"diet": "Diabetic",
 		"public_notes": "Brother of Charlie",
 		"admin_notes": ""
 	},
@@ -127,7 +127,7 @@
 		"gender": "Male",
 		"location": "With us",
 		"enclosure": "Savanna",
-		"dietary_restrictions": "High blood sugar",
+		"diet": "High blood sugar",
 		"public_notes": "Brother of Congo",
 		"admin_notes": ""
 	}

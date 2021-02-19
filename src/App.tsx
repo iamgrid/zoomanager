@@ -15,6 +15,7 @@ import {
 	faTimes,
 	faPlus,
 	faSearch,
+	faUtensils,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -27,7 +28,8 @@ library.add(
 	faCheck,
 	faTimes,
 	faPlus,
-	faSearch
+	faSearch,
+	faUtensils
 );
 
 function App() {

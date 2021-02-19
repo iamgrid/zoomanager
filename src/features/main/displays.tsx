@@ -3,8 +3,16 @@ import {
 	completeExpositionFieldConfigItem,
 	completeVerseFieldConfigItem,
 	configItemId,
+	dataItem,
+	speciesCollectionType,
 } from '../../types';
-import { getAgeFromBirthday, isFieldConfigItem } from '../../utils/helpers';
+import {
+	getAgeFromBirthday,
+	isFieldConfigItem,
+	flattenTaxonomy,
+	capitalize,
+} from '../../utils/helpers';
+import taxonomyData from '../../taxonomyData.json';
 
 function middleClasses(
 	activeView: string,
@@ -28,25 +36,32 @@ interface displayType {
 	createMiddle(
 		config: configItem,
 		activeView: string,
-		value: string
+		value: string,
+		itemData?: dataItem
 	): React.ReactElement | null;
 	createBack(config: configItem): React.ReactElement | null;
 	combine(
 		config: configItem,
 		activeView: string,
-		value: string
+		value: string,
+		itemData: dataItem
 	): Array<React.ReactElement | null>;
 }
 
 function createDisplay(type: string): displayType {
+	// create an empty object with genericDisplay as the prototype:
 	const assembledDisplay = Object.create(genericDisplay);
 
+	// assign the custom methods needed:
 	switch (type) {
 		case 'species':
 			Object.assign(assembledDisplay, speciesDisplay);
 			break;
 		case 'date_of_birth':
 			Object.assign(assembledDisplay, dateOfBirthDisplay);
+			break;
+		case 'diet':
+			Object.assign(assembledDisplay, dietDisplay);
 			break;
 	}
 
@@ -77,10 +92,10 @@ const genericDisplay: displayType = {
 		if (!isFieldConfigItem(config)) return null;
 		return <span className='data_display__suffix'>{config.suffix}</span>;
 	},
-	combine(config, activeView, value) {
+	combine(config, activeView, value, itemData) {
 		return [
 			this.createFront(config),
-			this.createMiddle(config, activeView, value),
+			this.createMiddle(config, activeView, value, itemData),
 			this.createBack(config),
 		];
 	},
@@ -89,12 +104,21 @@ const genericDisplay: displayType = {
 const speciesDisplay: any = {
 	createMiddle(config: configItem, activeView: string, value: string) {
 		if (!isFieldConfigItem(config)) return null;
+		let disp: string | React.ReactElement = value;
+		if (config.displaySettings === 'show_common_name') {
+			disp = (
+				<>
+					{getCommonNameFromSpecies(value)}
+					<br />({value})
+				</>
+			);
+		}
 		return (
 			<span
 				className={middleClasses(activeView, config.fontSize, config.cssClass)}
 				data-tmp='species'
 			>
-				{value}
+				{disp}
 			</span>
 		);
 	},
@@ -118,6 +142,78 @@ const dateOfBirthDisplay: any = {
 	},
 };
 
+const dietDisplay: any = {
+	createFront() {
+		return null;
+	},
+
+	createMiddle(
+		config: configItem,
+		activeView: string,
+		value: string,
+		itemData: dataItem
+	) {
+		if (!isFieldConfigItem(config)) {
+			console.error(config, 'is not of type fieldConfigItem');
+			return null;
+		}
+
+		const speciesDiet = capitalize(
+			getDietFromSpecies(itemData.species),
+			'first_letter'
+		);
+
+		if (config.displaySettings === 'show_species_diet') {
+			return (
+				<>
+					<span className='data_display__prefix'>
+						{config.prefix.replace(' ', '\u00A0')}
+					</span>
+					<span
+						className={middleClasses(
+							activeView,
+							config.fontSize,
+							config.cssClass
+						)}
+					>
+						{speciesDiet}
+					</span>
+				</>
+			);
+		} else if (config.displaySettings === 'show_both') {
+			let restrictions = null;
+
+			if (value.length > 0) {
+				restrictions = (
+					<>
+						<br />
+						<span className='data_display__prefix'>Restrictions: </span>
+						<br />
+						<span
+							className={middleClasses(
+								activeView,
+								config.fontSize,
+								config.cssClass
+							)}
+						>
+							{value}
+						</span>
+					</>
+				);
+			}
+
+			return (
+				<>
+					<span className={middleClasses(activeView, 'md', 'default')}>
+						{speciesDiet}
+					</span>
+					{restrictions}
+				</>
+			);
+		}
+	},
+};
+
 type displaysType = {
 	[key in configItemId]: displayType;
 };
@@ -130,9 +226,27 @@ const displays: displaysType = {
 	gender: genericDisplay,
 	location: genericDisplay,
 	enclosure: genericDisplay,
-	dietary_restrictions: genericDisplay,
+	diet: createDisplay('diet'),
 	public_notes: genericDisplay,
 	admin_notes: genericDisplay,
 };
+
+let flattenedTaxonomy: speciesCollectionType = {};
+
+function getCommonNameFromSpecies(species: string) {
+	if (Object.keys(flattenedTaxonomy).length < 1) {
+		flattenedTaxonomy = flattenTaxonomy(taxonomyData);
+	}
+
+	return flattenedTaxonomy[species].commonName;
+}
+
+function getDietFromSpecies(species: string) {
+	if (Object.keys(flattenedTaxonomy).length < 1) {
+		flattenedTaxonomy = flattenTaxonomy(taxonomyData);
+	}
+
+	return flattenedTaxonomy[species].diet;
+}
 
 export default displays;

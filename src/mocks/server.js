@@ -13,7 +13,7 @@ const handlers = [
 				"gender": "Female",
 				"location": "With us",
 				"enclosure": "Savanna",
-				"dietary_restrictions": "",
+				"diet": "",
 				"public_notes": "Lorem ipsum denem sit amet",
 				"admin_notes": ""
 			},
@@ -25,7 +25,7 @@ const handlers = [
 				"gender": "Female",
 				"location": "With us",
 				"enclosure": "Savanna",
-				"dietary_restrictions": "High chloresterol",
+				"diet": "High chloresterol",
 				"public_notes": "Accentuer elit",
 				"admin_notes": ""
 			}

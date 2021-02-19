@@ -59,7 +59,7 @@
 		"initialValue": "In transit",
 		"description": ""
 	},
-	"dietary_restrictions": {
+	"diet": {
 		"name": "Dietary restrictions",
 		"inputType": "checkboxSet",
 		"regexType": "nocheck",

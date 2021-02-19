@@ -4,13 +4,27 @@ import {
 	fieldConfigs,
 	completeExpositionFieldConfigItem,
 	completeVerseFieldConfigItem,
+	speciesType,
+	speciesCollectionType,
 } from '../types';
 
-export function capitalize(input: string): string {
-	return input
-		.split(' ')
-		.map((el) => `${el.substr(0, 1).toUpperCase()}${el.substr(1)}`)
-		.join(' ');
+export function capitalize(
+	input: string,
+	mode: 'first_letter' | 'all_words' = 'all_words'
+): string {
+	function capitalizeString(word: string) {
+		return `${word.substr(0, 1).toUpperCase()}${word.substr(1)}`;
+	}
+	if (mode === 'all_words') {
+		return input
+			.split(' ')
+			.map((el) => capitalizeString(el))
+			.join(' ');
+	} else if (mode === 'first_letter') {
+		return capitalizeString(input);
+	} else {
+		return input;
+	}
 }
 
 export function hasOwnProperty<X extends {}, Y extends PropertyKey>(
@@ -32,6 +46,10 @@ export function isExpositionFieldConfigItem(
 	return typeof obj.icon === 'string' && typeof obj.required === 'boolean';
 }
 
+export function isSpeciesType(obj: any): obj is speciesType {
+	return typeof obj.commonName === 'string' && typeof obj.diet === 'string';
+}
+
 export function getAgeFromBirthday(birthday: string): number {
 	const now = new Date().getTime();
 	const bd = new Date(birthday).getTime();
@@ -41,6 +59,28 @@ export function getAgeFromBirthday(birthday: string): number {
 	const ageInMS = now - bd;
 	const ageDate = new Date(ageInMS);
 	return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+
+export function flattenTaxonomy(taxonomyData: any) {
+	const re: speciesCollectionType = {};
+
+	function fTHelper(key: string, node: any) {
+		if (isSpeciesType(node)) {
+			re[key] = node;
+		} else {
+			for (const key2 in node) {
+				fTHelper(key2, node[key2]);
+			}
+		}
+	}
+
+	for (const key in taxonomyData) {
+		fTHelper(key, taxonomyData[key]);
+	}
+
+	console.log('flattenTaxonomy() was called');
+
+	return re;
 }
 
 export function processFieldConfigs(rawConfigs: rawFieldConfigs): fieldConfigs {
