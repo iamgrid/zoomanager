@@ -80,13 +80,12 @@ const genericDisplay: displayType = {
 	createMiddle(config, activeView, value) {
 		if (typeof value !== 'string') return null;
 		if (!isFieldConfigItem(config)) return null;
-		return (
-			<span
-				className={middleClasses(activeView, config.fontSize, config.cssClass)}
-			>
-				{value}
-			</span>
-		);
+		const classes = middleClasses(activeView, config.fontSize, config.cssClass);
+		let re = <span className={classes}>{value}</span>;
+		if (config.fontSize === 'xl') {
+			re = <h2 className={classes}>{value}</h2>;
+		}
+		return re;
 	},
 	createBack(config) {
 		if (!isFieldConfigItem(config)) return null;

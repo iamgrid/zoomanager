@@ -20,6 +20,7 @@ import {
 } from './mainSlice';
 import { processFieldConfigs } from '../../utils/helpers';
 import DataItem from './DataItem';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Main(): React.ReactElement {
 	const { activeView } = React.useContext(ViewContext);
@@ -110,8 +111,24 @@ export default function Main(): React.ReactElement {
 		);
 	}
 
+	let topFunctions = null;
+	if (activeView === 'exposition') {
+		topFunctions = (
+			<div className='top_functions'>
+				<button
+					className='top_functions__button ibutton'
+					title='Add new record'
+				>
+					<FontAwesomeIcon icon='plus' />
+					<span className='top_functions__button_label'> Add new record</span>
+				</button>
+			</div>
+		);
+	}
+
 	return (
 		<div className='main' id='main'>
+			{topFunctions}
 			{dataDisplay()}
 		</div>
 	);

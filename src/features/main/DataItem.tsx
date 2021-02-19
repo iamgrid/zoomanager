@@ -18,8 +18,35 @@ export default function DataItem({
 	itemData,
 	fieldConfig,
 }: DataItemProps): React.ReactElement {
+	const { activeView } = React.useContext(ViewContext);
+
+	let itemFunctions: React.ReactElement | null = null;
+
+	if (activeView === 'exposition') {
+		itemFunctions = (
+			<div className='data_display__item_functions'>
+				<button
+					className='data_display__item_button'
+					title={'Edit ' + itemData.name}
+				>
+					<FontAwesomeIcon icon='pencil-alt' />
+				</button>
+				<button
+					className='data_display__item_button'
+					title={'Delete ' + itemData.name}
+				>
+					<FontAwesomeIcon icon='trash-alt' />
+				</button>
+			</div>
+		);
+	}
+
 	return (
-		<div className='data_display__item'>
+		<article
+			className='data_display__item'
+			aria-label={'Data item ' + itemData.name}
+		>
+			{itemFunctions}
 			{Object.keys(fieldConfig).map((sectionId) => {
 				return (
 					<DataSection
@@ -30,7 +57,7 @@ export default function DataItem({
 					/>
 				);
 			})}
-		</div>
+		</article>
 	);
 }
 

@@ -20,7 +20,7 @@ export default function Header(): React.ReactElement {
 			</label>
 			<div className='header__view_selector'>
 				{Object.values(view).map((el) => {
-					let classes = ['header__view_selector_button'];
+					let classes = ['header__view_selector_button', 'ibutton'];
 					if (el === activeView)
 						classes.push('header__view_selector_button--active');
 
